@@ -5,8 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const helloRoutes_1 = __importDefault(require("./containers/hello/helloRoutes"));
+const personRoutes_1 = __importDefault(require("./containers/person/personRoutes"));
 const app = express_1.default();
 app.use(helloRoutes_1.default)
+    .use(personRoutes_1.default)
     .use(express_1.default.json)
     .use(express_1.default.urlencoded({ extended: false }));
 const port = 4000;
